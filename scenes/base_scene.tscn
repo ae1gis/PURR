@@ -1,3 +1,92 @@
 [gd_scene format=3 uid="uid://nopl4tdopmbb"]
 
+[ext_resource type="PackedScene" uid="uid://bul5nokpl3f8w" path="res://scenes/player.tscn" id="1_ou4n4"]
+
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_ou4n4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gs7x"]
+size = Vector2(1213, 64)
+
+[sub_resource type="DrawableTexture2D" id="DrawableTexture2D_t2ufi"]
+
 [node name="BaseScene" type="Node2D" unique_id=148183229]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1709927222]
+z_index = -1
+position = Vector2(581.75, 328.75)
+scale = Vector2(1164.5, 658.5)
+texture = SubResource("DrawableTexture2D_ou4n4")
+
+[node name="Player" parent="." unique_id=1915441784 instance=ExtResource("1_ou4n4")]
+position = Vector2(844, 564)
+
+[node name="Platforms" type="Node2D" parent="." unique_id=262633385]
+
+[node name="BaseGround2" type="StaticBody2D" parent="Platforms" unique_id=1258334277]
+position = Vector2(-2, 625)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/BaseGround2" unique_id=2087051858]
+position = Vector2(574.5, 0)
+shape = SubResource("RectangleShape2D_3gs7x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/BaseGround2" unique_id=2142068391]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(578, 0)
+scale = Vector2(19.0625, 1)
+texture = SubResource("DrawableTexture2D_t2ufi")
+
+[node name="BaseGround" type="StaticBody2D" parent="Platforms" unique_id=602238035]
+position = Vector2(1252, 538)
+scale = Vector2(0.24000001, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/BaseGround" unique_id=1952483409]
+position = Vector2(574.5, 0)
+shape = SubResource("RectangleShape2D_3gs7x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/BaseGround" unique_id=1147726821]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(578, 0)
+scale = Vector2(19.0625, 1)
+texture = SubResource("DrawableTexture2D_t2ufi")
+
+[node name="BaseGround3" type="StaticBody2D" parent="Platforms" unique_id=609225082]
+position = Vector2(1601, 458)
+scale = Vector2(0.24000001, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/BaseGround3" unique_id=1357079731]
+position = Vector2(574.5, 0)
+shape = SubResource("RectangleShape2D_3gs7x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/BaseGround3" unique_id=1412968314]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(578, 0)
+scale = Vector2(19.0625, 1)
+texture = SubResource("DrawableTexture2D_t2ufi")
+
+[node name="BaseGround4" type="StaticBody2D" parent="Platforms" unique_id=1866974112]
+position = Vector2(1946, 342)
+scale = Vector2(0.24000001, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/BaseGround4" unique_id=1267023710]
+position = Vector2(574.5, 0)
+shape = SubResource("RectangleShape2D_3gs7x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/BaseGround4" unique_id=1973032161]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(578, 0)
+scale = Vector2(19.0625, 1)
+texture = SubResource("DrawableTexture2D_t2ufi")
+
+[node name="BaseGround5" type="StaticBody2D" parent="Platforms" unique_id=1600941788]
+position = Vector2(1594, 196)
+scale = Vector2(0.24000001, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/BaseGround5" unique_id=454110312]
+position = Vector2(574.5, 0)
+shape = SubResource("RectangleShape2D_3gs7x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/BaseGround5" unique_id=1160481249]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(578, 0)
+scale = Vector2(19.0625, 1)
+texture = SubResource("DrawableTexture2D_t2ufi")
