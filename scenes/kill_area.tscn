@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://pjsmvy8cbp6f"]
+
+[ext_resource type="Script" uid="uid://ltodolw4w7jv" path="res://src/kill_area.gd" id="1_dyxuw"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_t2ufi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxxmo"]
+
+[node name="KillArea" type="Area2D" unique_id=1805355885]
+script = ExtResource("1_dyxuw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1388496082]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_t2ufi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1614285057]
+shape = SubResource("RectangleShape2D_mxxmo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
