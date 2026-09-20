@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bul5nokpl3f8w" path="res://scenes/player.tscn" id="1_dwgg1"]
 [ext_resource type="PackedScene" uid="uid://s31c8rworka2" path="res://scenes/platform.tscn" id="2_ru4tf"]
-[ext_resource type="Texture2D" uid="uid://bhb4g7l0jww6x" path="res://assets/sprites/heart.png" id="3_6sh32"]
 [ext_resource type="Texture2D" uid="uid://bk06ru6o36wc8" path="res://assets/sprites/seamless-notebook-paper-texture-free.jpg" id="4_ejswk"]
 [ext_resource type="PackedScene" uid="uid://pjsmvy8cbp6f" path="res://scenes/kill_area.tscn" id="5_ru4tf"]
 [ext_resource type="PackedScene" uid="uid://cg0p8hehslrk0" path="res://scenes/spike_1.tscn" id="6_6sh32"]
@@ -11,7 +10,7 @@
 
 [node name="Player" parent="." unique_id=1915441784 instance=ExtResource("1_dwgg1")]
 position = Vector2(846.00006, 545)
-scale = Vector2(1.2461867, 1.2498465)
+scale = Vector2(0.4, 0.402)
 
 [node name="Platforms" type="Node2D" parent="." unique_id=262633385]
 
@@ -24,7 +23,7 @@ position = Vector2(1659, 644)
 scale = Vector2(0.47999758, 0.44000056)
 
 [node name="Platform8" parent="Platforms" unique_id=1460517223 instance=ExtResource("2_ru4tf")]
-position = Vector2(2659, -248.99988)
+position = Vector2(2659, -225)
 scale = Vector2(0.47999758, 0.44000056)
 
 [node name="Platform3" parent="Platforms" unique_id=831952625 instance=ExtResource("2_ru4tf")]
@@ -45,56 +44,14 @@ position = Vector2(-2204, 123.000015)
 scale = Vector2(0.47999758, 0.44000056)
 
 [node name="Platform4" parent="Platforms" unique_id=1659930638 instance=ExtResource("2_ru4tf")]
-position = Vector2(2143, 197.00003)
+position = Vector2(2353, 197)
 rotation = -1.5707964
 scale = Vector2(0.47999758, 0.44000056)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1816219239]
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1052376223]
-position = Vector2(39, 42.000004)
-scale = Vector2(0.15904567, 0.16315615)
-texture = ExtResource("3_6sh32")
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer" unique_id=1984058957]
-position = Vector2(92, 43.000004)
-scale = Vector2(0.15904567, 0.16315615)
-texture = ExtResource("3_6sh32")
-
-[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer" unique_id=1535899990]
-position = Vector2(144.99998, 43.000004)
-scale = Vector2(0.15904567, 0.16315615)
-texture = ExtResource("3_6sh32")
-
-[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer" unique_id=1852539931]
-position = Vector2(197.99997, 43.000004)
-scale = Vector2(0.15904567, 0.16315615)
-texture = ExtResource("3_6sh32")
-
-[node name="Sprite2D5" type="Sprite2D" parent="CanvasLayer" unique_id=135341445]
-position = Vector2(250, 43.000004)
-scale = Vector2(0.15904567, 0.16315615)
-texture = ExtResource("3_6sh32")
-
-[node name="Sprite2D6" type="Sprite2D" parent="CanvasLayer" unique_id=1806563804]
-position = Vector2(304, 43.000004)
-scale = Vector2(0.15904567, 0.16315615)
-texture = ExtResource("3_6sh32")
-
-[node name="Sprite2D7" type="Sprite2D" parent="CanvasLayer" unique_id=901984091]
-position = Vector2(357, 43.000004)
-scale = Vector2(0.1590457, 0.16315615)
-texture = ExtResource("3_6sh32")
-
-[node name="Sprite2D8" type="Sprite2D" parent="CanvasLayer" unique_id=656683024]
-position = Vector2(410, 43.000004)
-scale = Vector2(0.15904567, 0.16315615)
-texture = ExtResource("3_6sh32")
-
-[node name="Sprite2D9" type="Sprite2D" parent="CanvasLayer" unique_id=692878010]
-position = Vector2(464, 43.000004)
-scale = Vector2(0.15904567, 0.16315615)
-texture = ExtResource("3_6sh32")
+[node name="Platform9" parent="Platforms" unique_id=1680414787 instance=ExtResource("2_ru4tf")]
+position = Vector2(-2694.9998, -331.99997)
+rotation = -4.7114415
+scale = Vector2(0.47999758, 0.44000056)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1611259792]
 z_index = -2

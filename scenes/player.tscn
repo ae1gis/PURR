@@ -1,10 +1,46 @@
 [gd_scene format=3 uid="uid://bul5nokpl3f8w"]
 
 [ext_resource type="Script" uid="uid://d0t7fljboi0gq" path="res://src/player_states/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://d4jbclsdrqpm6" path="res://assets/sprites/cat_sprite1.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://dl6ly00rjboq6" path="res://assets/sprites/cat-animation/frame0000.png" id="3_fulsm"]
+[ext_resource type="Texture2D" uid="uid://ciqu2k8rl0muk" path="res://assets/sprites/cat-animation/frame0001.png" id="4_4r5pv"]
+[ext_resource type="Texture2D" uid="uid://08821yeg22mf" path="res://assets/sprites/cat-animation/frame0002.png" id="5_60mlk"]
+[ext_resource type="Texture2D" uid="uid://ckc734s4n3o7c" path="res://assets/sprites/cat-animation/frame0003.png" id="6_i4ail"]
+[ext_resource type="Texture2D" uid="uid://sbqqtqyraxpe" path="res://assets/sprites/cat-animation/frame0004.png" id="7_a38lo"]
+[ext_resource type="Texture2D" uid="uid://dop8xqrfgev5n" path="res://assets/sprites/cat-animation/frame0005.png" id="8_4ni07"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yvre"]
-size = Vector2(75, 189.28601)
+size = Vector2(214, 578.5723)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ru4tf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fulsm")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4r5pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_60mlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i4ail")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a38lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4ni07")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=1915441784]
 script = ExtResource("1_g2els")
@@ -12,12 +48,8 @@ script = ExtResource("1_g2els")
 [node name="SprintDelay" type="Timer" parent="." unique_id=1252274206]
 wait_time = 0.5
 
-[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=830479834]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_g2els")
-
 [node name="PlayerCollisionBox" type="CollisionShape2D" parent="." unique_id=1029750060]
-position = Vector2(-0.5, 1.4999996)
+position = Vector2(3, 13)
 scale = Vector2(1, 0.27999955)
 shape = SubResource("RectangleShape2D_4yvre")
 
@@ -27,7 +59,13 @@ position_smoothing_enabled = true
 position_smoothing_speed = 15.0
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1572533656]
-position = Vector2(-25, 20)
-target_position = Vector2(80, 0)
+position = Vector2(1.0000019, 16)
+rotation = 0.33161256
+target_position = Vector2(163, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=122398099]
+sprite_frames = SubResource("SpriteFrames_ru4tf")
+animation = &"idle"
+frame_progress = 0.55384314
 
 [connection signal="timeout" from="SprintDelay" to="." method="_on_sprint_delay_timeout"]

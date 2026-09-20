@@ -51,17 +51,23 @@ func _physics_process(delta: float) -> void:
 
 func animation_update() -> void:
 	if velocity.x != 0:
-		$PlayerSprite.flip_h = velocity.x < 0
-	if not is_on_floor and wall_ray.is_colliding():
-		$PlayerSprite.rotation = -80.0
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+		
+	if $AnimatedSprite2D.flip_h:
+		$RayCast2D.rotation = 161.0
+	else:
+		$RayCast2D.rotation = 19.0
 	
 func walk(direction: float, player_speed: float) -> void:
+	$AnimatedSprite2D.play("walk")
 	velocity.x = direction * player_speed
 	
 func run(direction: float, player_speed: float) -> void:
+	$AnimatedSprite2D.play("walk")
 	velocity.x = direction * player_speed * run_speed_multiplier
 	
 func idle() -> void:
+	$AnimatedSprite2D.play("idle")
 	velocity.x = 0
 	
 func jump(jump_height: float) -> void:
