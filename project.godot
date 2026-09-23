@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="cat game"
-run/main_scene="uid://nuea2eqejdj6"
+config/name="PURR!"
+run/main_scene="uid://cfhxemcxxw0sw"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [display]

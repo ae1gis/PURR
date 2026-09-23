@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cfhxemcxxw0sw"]
+
+[ext_resource type="PackedScene" uid="uid://fs0sixhwb8qy" path="res://scenes/player_kitty.tscn" id="1_ou4n4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4yvre"]
+
+[node name="BaseScene" type="Node2D" unique_id=1468104009]
+
+[node name="PhysicsPlatform" type="StaticBody2D" parent="." unique_id=1944275870]
+position = Vector2(580, 647)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhysicsPlatform" unique_id=1410890221]
+shape = SubResource("WorldBoundaryShape2D_4yvre")
+
+[node name="PlayerKitty" parent="." unique_id=205369655 instance=ExtResource("1_ou4n4")]
