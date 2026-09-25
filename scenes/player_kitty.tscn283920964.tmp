@@ -8,9 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dkbqds31dhoqg" path="res://assets/sprites/cat-animation2/idle/frame0004.png" id="5_a0v2x"]
 [ext_resource type="Texture2D" uid="uid://4ldgjl1y5inx" path="res://assets/sprites/cat-animation2/idle/frame0005.png" id="6_hwv5d"]
 [ext_resource type="Texture2D" uid="uid://cr74v745hk5dp" path="res://assets/sprites/cat-animation2/idle/frame0006.png" id="7_e2b75"]
-[ext_resource type="Texture2D" uid="uid://bdu3n8q5h5ebq" path="res://assets/sprites/cat-animation2/jump/frame0000.png" id="9_eunh3"]
 [ext_resource type="Texture2D" uid="uid://c28t4vbuf7rm4" path="res://assets/sprites/cat-animation2/walk/frame0001.png" id="10_bt3a3"]
-[ext_resource type="Texture2D" uid="uid://da1ffm2exv285" path="res://assets/sprites/cat-animation2/jump/frame0001.png" id="10_neeop"]
 [ext_resource type="Texture2D" uid="uid://vj5vt4yfjp6y" path="res://assets/sprites/cat-animation2/walk/frame0002.png" id="11_qalne"]
 [ext_resource type="Texture2D" uid="uid://6dgbq3w7u1ap" path="res://assets/sprites/cat-animation2/walk/frame0003.png" id="12_a0v2x"]
 [ext_resource type="Texture2D" uid="uid://bwi5nnnhdiov5" path="res://assets/sprites/cat-animation2/walk/frame0004.png" id="13_hwv5d"]
@@ -45,17 +43,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_eunh3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_neeop")
-}],
-"loop": 1,
-"name": &"jump",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("10_bt3a3")
 }, {
 "duration": 1.0,
@@ -80,9 +67,9 @@ script = ExtResource("1_hnni7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=799345087]
 sprite_frames = SubResource("SpriteFrames_4yvre")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.04781136
+frame_progress = 0.3599472
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1768376393]
 position = Vector2(0, 7.6685743)

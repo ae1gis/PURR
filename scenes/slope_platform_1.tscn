@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ctbh7dpxcajti"]
+
+[ext_resource type="Texture2D" uid="uid://crmyja47n7184" path="res://assets/sprites/slope_platform3.png" id="1_y6s84"]
+
+[node name="BoxPlatform1" type="StaticBody2D" unique_id=1259045522]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1712888748]
+texture = ExtResource("1_y6s84")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1912437358]
+polygon = PackedVector2Array(-32, -32, -569, -579, -565, 564, 556, 569)

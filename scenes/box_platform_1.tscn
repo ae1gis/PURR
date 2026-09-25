@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://2mbjlw7xfbmb"]
+
+[ext_resource type="Texture2D" uid="uid://b1m4msn3a4sih" path="res://assets/sprites/cube_platform1.png" id="1_038c8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yvre"]
+size = Vector2(20, 19.69886)
+
+[node name="BoxPlatform1" type="StaticBody2D" unique_id=1259045522]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1154046817]
+position = Vector2(-7.998519e-08, -3.712919)
+rotation = -3.1415925
+scale = Vector2(35.66584, 35.767258)
+shape = SubResource("RectangleShape2D_4yvre")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1712888748]
+texture = ExtResource("1_038c8")

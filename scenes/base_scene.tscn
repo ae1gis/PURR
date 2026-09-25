@@ -1,15 +1,54 @@
 [gd_scene format=3 uid="uid://cfhxemcxxw0sw"]
 
 [ext_resource type="PackedScene" uid="uid://fs0sixhwb8qy" path="res://scenes/player_kitty.tscn" id="1_ou4n4"]
+[ext_resource type="Texture2D" uid="uid://bk06ru6o36wc8" path="res://assets/sprites/seamless-notebook-paper-texture-free.jpg" id="2_gf1bn"]
+[ext_resource type="PackedScene" uid="uid://2mbjlw7xfbmb" path="res://scenes/box_platform_1.tscn" id="3_ha2ph"]
+[ext_resource type="PackedScene" uid="uid://cpv68tgx7ai84" path="res://scenes/falling_platform_1.tscn" id="4_osw8o"]
+[ext_resource type="PackedScene" uid="uid://ctbh7dpxcajti" path="res://scenes/slope_platform_1.tscn" id="4_pmxr0"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4yvre"]
-
-[node name="BaseScene" type="Node2D" unique_id=1468104009]
-
-[node name="PhysicsPlatform" type="StaticBody2D" parent="." unique_id=1944275870]
-position = Vector2(580, 647)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PhysicsPlatform" unique_id=1410890221]
-shape = SubResource("WorldBoundaryShape2D_4yvre")
+[node name="Level1" type="Node2D" unique_id=1468104009]
 
 [node name="PlayerKitty" parent="." unique_id=205369655 instance=ExtResource("1_ou4n4")]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1514128243]
+z_index = -10
+repeat_size = Vector2(800, 533)
+autoscroll = Vector2(1, 1)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=549524219]
+texture = ExtResource("2_gf1bn")
+centered = false
+
+[node name="Platforms" type="Node" parent="." unique_id=629937549]
+
+[node name="BoxPlatform1" parent="Platforms" unique_id=1259045522 instance=ExtResource("3_ha2ph")]
+position = Vector2(36, 506)
+
+[node name="BoxPlatform4" parent="Platforms" unique_id=1494203875 instance=ExtResource("3_ha2ph")]
+position = Vector2(-1136, 506)
+
+[node name="BoxPlatform7" parent="Platforms" unique_id=856115808 instance=ExtResource("3_ha2ph")]
+position = Vector2(6787, 506)
+
+[node name="BoxPlatform2" parent="Platforms" unique_id=683506411 instance=ExtResource("3_ha2ph")]
+position = Vector2(1162, 316)
+
+[node name="BoxPlatform3" parent="Platforms" unique_id=289638336 instance=ExtResource("3_ha2ph")]
+position = Vector2(2230, 133)
+
+[node name="SlopePlatform" parent="Platforms" unique_id=2046189518 instance=ExtResource("4_pmxr0")]
+position = Vector2(7897, 714)
+
+[node name="SlopePlatform2" parent="Platforms" unique_id=2068236999 instance=ExtResource("4_pmxr0")]
+position = Vector2(9352, 697.00006)
+rotation = -1.5913546
+
+[node name="FallingPlatform1" parent="Platforms" unique_id=66096783 instance=ExtResource("4_osw8o")]
+position = Vector2(3315, 408)
+
+[node name="FallingPlatform2" parent="Platforms" unique_id=412593569 instance=ExtResource("4_osw8o")]
+position = Vector2(4586, 402)
+
+[node name="FallingPlatform3" parent="Platforms" unique_id=447885089 instance=ExtResource("4_osw8o")]
+position = Vector2(5813, 376)

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cpv68tgx7ai84"]
+
+[ext_resource type="Script" uid="uid://b2orf033jxnm5" path="res://src/falling_platform_1.gd" id="1_5d1bw"]
+[ext_resource type="Texture2D" uid="uid://c7ohb4nql1ktf" path="res://assets/sprites/cube_platform2.png" id="1_l4jhx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d1bw"]
+size = Vector2(20.245464, 35.32959)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yvre"]
+
+[node name="FallingPlatform1" type="RigidBody2D" unique_id=66096783]
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_5d1bw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=818095977]
+position = Vector2(-4.492189, -29.499996)
+scale = Vector2(36.601563, 5.179794)
+shape = SubResource("RectangleShape2D_5d1bw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=491150748]
+position = Vector2(4, 0)
+texture = ExtResource("1_l4jhx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1236333101]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1841851485]
+position = Vector2(-1, -94)
+scale = Vector2(-37.357933, 4.2011757)
+shape = SubResource("RectangleShape2D_4yvre")
+debug_color = Color(0.984546, 0, 0.19237879, 0.41960785)
+
+[node name="TimeUntilFall" type="Timer" parent="." unique_id=334203916]
+wait_time = 0.15
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="TimeUntilFall" to="." method="_on_time_until_fall_timeout"]
