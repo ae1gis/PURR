@@ -8,6 +8,8 @@ var direction: Vector2
 var player_speed: float = 1000.0
 var jump_strength: float = 800.0
 
+enum States {IDLE, WALK, JUMP}
+
 func animate_player() -> void:
 	if velocity.x > 0:
 		animation.flip_h = false
