@@ -81,6 +81,23 @@ animations = [{
 "texture": ExtResource("13_hwv5d")
 }],
 "loop": 1,
+"name": &"run",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_bt3a3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qalne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a0v2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hwv5d")
+}],
+"loop": 1,
 "name": &"walk",
 "speed": 5.0
 }]
@@ -93,9 +110,9 @@ script = ExtResource("1_hnni7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=799345087]
 sprite_frames = SubResource("SpriteFrames_4yvre")
-animation = &"fall"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.027374867
+frame_progress = 0.93132144
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1768376393]
 position = Vector2(0, 7.6685743)
@@ -104,3 +121,16 @@ shape = SubResource("RectangleShape2D_4yvre")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=863595975]
 zoom = Vector2(0.5, 0.5)
+
+[node name="DebugStats" type="CanvasLayer" parent="." unique_id=689775652]
+
+[node name="DebugInfoLabel" type="Label" parent="DebugStats" unique_id=1497135029]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -77.0
+offset_bottom = 36.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "state: "
