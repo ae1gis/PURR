@@ -6,14 +6,14 @@ extends CharacterBody2D
 const MAX_SPEED = 1000
 
 @export var player_speed: float = 750.0
-@export var jump_strength: float = 800.0
+@export var jump_strength: float = 1200.0
 
 enum States { IDLE, WALK, RUN, JUMP, FALL }
 @export var state = States.IDLE
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += (get_gravity() * 2) * delta
 	
 	match state:
 		States.IDLE:
@@ -48,7 +48,7 @@ func _physics_process(delta: float) -> void:
 		States.RUN:
 			var direction := Input.get_axis("left", "right")
 			if direction != 0 and Input.is_action_pressed("shift"):
-				velocity.x = (direction * player_speed) * 1.25
+				velocity.x = (direction * player_speed) * 1.5
 			elif direction != 0:
 				transition_to_state(States.WALK)
 			else:

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dfuvawqlqdyu3"]
 
 [ext_resource type="Script" uid="uid://dg1vsxv4kpqby" path="res://src/death_screen.gd" id="1_uyutr"]
+[ext_resource type="Texture2D" uid="uid://bkwvhmui03bow" path="res://assets/sprites/knockout-text.png" id="2_dwo6e"]
+[ext_resource type="Texture2D" uid="uid://bk06ru6o36wc8" path="res://assets/sprites/seamless-notebook-paper-texture-free.jpg" id="3_mqh5l"]
 
 [node name="DeathScreen" type="Control" unique_id=636531586]
 layout_mode = 3
@@ -13,29 +15,6 @@ script = ExtResource("1_uyutr")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1566372787]
 
-[node name="DeathScreenBackground" type="ColorRect" parent="CanvasLayer" unique_id=2055675250]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="YouDiedLabel" type="Label" parent="CanvasLayer" unique_id=1488606490]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -183.0
-offset_top = -195.0
-offset_right = 184.0
-offset_bottom = -85.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 80
-text = "You Died!"
-
 [node name="RespawnButton" type="Button" parent="CanvasLayer" unique_id=1305858539]
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,12 +22,34 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -113.0
-offset_top = -38.5
+offset_top = 103.0
 offset_right = 113.0
-offset_bottom = 38.5
+offset_bottom = 180.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Respawn"
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=473686325]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -109.0
+offset_right = 20.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control" unique_id=172797584]
+texture = ExtResource("2_dwo6e")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1174358531]
+position = Vector2(578, 294)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_mqh5l")
 
 [connection signal="pressed" from="CanvasLayer/RespawnButton" to="." method="_on_respawn_button_pressed"]

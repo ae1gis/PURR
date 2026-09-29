@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://cfhxemcxxw0sw"]
 
 [ext_resource type="PackedScene" uid="uid://fs0sixhwb8qy" path="res://scenes/player_kitty.tscn" id="1_6sh32"]
+[ext_resource type="Script" uid="uid://ctaqgirlqpjxu" path="res://src/level_1.gd" id="1_ejswk"]
 [ext_resource type="Texture2D" uid="uid://bk06ru6o36wc8" path="res://assets/sprites/seamless-notebook-paper-texture-free.jpg" id="2_ejswk"]
 [ext_resource type="PackedScene" uid="uid://2mbjlw7xfbmb" path="res://scenes/box_platform_1.tscn" id="3_bbk5w"]
+[ext_resource type="PackedScene" uid="uid://qhmi8ibfyqj6" path="res://scenes/checkpoint_flag.tscn" id="4_6sh32"]
 [ext_resource type="PackedScene" uid="uid://cpv68tgx7ai84" path="res://scenes/falling_platform_1.tscn" id="5_d3jkd"]
 [ext_resource type="PackedScene" uid="uid://bt8yad6natas8" path="res://scenes/level_boundary.tscn" id="6_u3awl"]
 
 [node name="Level1" type="Node2D" unique_id=1468104009]
+script = ExtResource("1_ejswk")
 
 [node name="PlayerKitty" parent="." unique_id=205369655 instance=ExtResource("1_6sh32")]
 
@@ -25,11 +28,14 @@ centered = false
 [node name="BoxPlatform1" parent="Platforms" unique_id=1259045522 instance=ExtResource("3_bbk5w")]
 position = Vector2(36, 506)
 
-[node name="BoxPlatform4" parent="Platforms" unique_id=1494203875 instance=ExtResource("3_bbk5w")]
-position = Vector2(-1136, 506)
-
 [node name="BoxPlatform7" parent="Platforms" unique_id=856115808 instance=ExtResource("3_bbk5w")]
 position = Vector2(6787, 506)
+
+[node name="BoxPlatform8" parent="Platforms" unique_id=763426645 instance=ExtResource("3_bbk5w")]
+position = Vector2(8181, 513)
+
+[node name="BoxPlatform9" parent="Platforms" unique_id=1644340970 instance=ExtResource("3_bbk5w")]
+position = Vector2(9541, 520)
 
 [node name="BoxPlatform2" parent="Platforms" unique_id=683506411 instance=ExtResource("3_bbk5w")]
 position = Vector2(1162, 316)
@@ -49,11 +55,14 @@ position = Vector2(5813, 376)
 [node name="LevelBoundary" parent="." unique_id=1335190385 instance=ExtResource("6_u3awl")]
 position = Vector2(3, 1561)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1726166549]
+[node name="LevelDebug" type="CanvasLayer" parent="." unique_id=1726166549]
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=523394042]
+[node name="LevelName" type="Label" parent="LevelDebug" unique_id=523394042]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Level 1"
+
+[node name="CheckpointFlag" parent="." unique_id=599909850 instance=ExtResource("4_6sh32")]
+position = Vector2(9816, -20)

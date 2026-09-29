@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://qhmi8ibfyqj6"]
+
+[ext_resource type="Script" uid="uid://bjk2n5kccljmo" path="res://src/checkpoint_flag.gd" id="1_4eoee"]
+[ext_resource type="Texture2D" uid="uid://deu4o5oae6g5j" path="res://assets/sprites/checkpoint-animation/frame0000.png" id="1_sj8yo"]
+[ext_resource type="Texture2D" uid="uid://ifprb5hagkv1" path="res://assets/sprites/checkpoint-animation/frame0001.png" id="2_4eoee"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4r1u5"]
+size = Vector2(19.13023, 19.890007)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4yvre"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sj8yo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4eoee")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CheckpointFlag" type="Area2D" unique_id=599909850]
+script = ExtResource("1_4eoee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=163156060]
+position = Vector2(2.953139, 0.80075717)
+scale = Vector2(6.790628, -14.56015)
+shape = SubResource("RectangleShape2D_4r1u5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1382197510]
+sprite_frames = SubResource("SpriteFrames_4yvre")
+autoplay = "default"
+frame_progress = 0.5909358
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
