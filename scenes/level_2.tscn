@@ -1,3 +1,94 @@
 [gd_scene format=3 uid="uid://dlxafgawyp84e"]
 
+[ext_resource type="PackedScene" uid="uid://fs0sixhwb8qy" path="res://scenes/player_kitty.tscn" id="1_wo48x"]
+[ext_resource type="Script" uid="uid://di0gu75afacxb" path="res://src/level_2.gd" id="1_y0kc7"]
+[ext_resource type="Texture2D" uid="uid://bk06ru6o36wc8" path="res://assets/sprites/seamless-notebook-paper-texture-free.jpg" id="2_y0kc7"]
+[ext_resource type="PackedScene" uid="uid://2mbjlw7xfbmb" path="res://scenes/box_platform_1.tscn" id="3_ne2mo"]
+[ext_resource type="PackedScene" uid="uid://cpv68tgx7ai84" path="res://scenes/falling_platform_1.tscn" id="4_6cvei"]
+[ext_resource type="PackedScene" uid="uid://bt8yad6natas8" path="res://scenes/level_boundary.tscn" id="5_que50"]
+[ext_resource type="PackedScene" uid="uid://qhmi8ibfyqj6" path="res://scenes/checkpoint_flag.tscn" id="6_hey2k"]
+
 [node name="level2" type="Node2D" unique_id=1209121263]
+script = ExtResource("1_y0kc7")
+
+[node name="PlayerKitty" parent="." unique_id=1855842895 instance=ExtResource("1_wo48x")]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1018888373]
+z_index = -10
+repeat_size = Vector2(800, 533)
+autoscroll = Vector2(1, 1)
+repeat_times = 6
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=82826712]
+texture = ExtResource("2_y0kc7")
+centered = false
+
+[node name="Platforms" type="Node" parent="." unique_id=202077911]
+
+[node name="BoxPlatform1" parent="Platforms" unique_id=1259045522 instance=ExtResource("3_ne2mo")]
+position = Vector2(36, 506)
+
+[node name="BoxPlatform2" parent="Platforms" unique_id=609326655 instance=ExtResource("3_ne2mo")]
+position = Vector2(8282, 352)
+
+[node name="BoxPlatform3" parent="Platforms" unique_id=1473171631 instance=ExtResource("3_ne2mo")]
+position = Vector2(9311, 1043)
+
+[node name="BoxPlatform4" parent="Platforms" unique_id=734269219 instance=ExtResource("3_ne2mo")]
+position = Vector2(10288, 1049)
+
+[node name="BoxPlatform5" parent="Platforms" unique_id=322786713 instance=ExtResource("3_ne2mo")]
+position = Vector2(11348, 1049)
+
+[node name="BoxPlatform9" parent="Platforms" unique_id=1510076381 instance=ExtResource("3_ne2mo")]
+position = Vector2(17353, 475)
+
+[node name="FallingPlatform1" parent="Platforms" unique_id=66096783 instance=ExtResource("4_6cvei")]
+position = Vector2(1053, 547)
+
+[node name="FallingPlatform7" parent="Platforms" unique_id=480902738 instance=ExtResource("4_6cvei")]
+position = Vector2(12372, 1057)
+
+[node name="FallingPlatform8" parent="Platforms" unique_id=950796074 instance=ExtResource("4_6cvei")]
+position = Vector2(13353, 1054)
+
+[node name="FallingPlatform9" parent="Platforms" unique_id=131847604 instance=ExtResource("4_6cvei")]
+position = Vector2(14393, 805)
+
+[node name="FallingPlatform10" parent="Platforms" unique_id=919194679 instance=ExtResource("4_6cvei")]
+position = Vector2(15370, 564)
+
+[node name="FallingPlatform11" parent="Platforms" unique_id=795677293 instance=ExtResource("4_6cvei")]
+position = Vector2(16386, 375)
+
+[node name="FallingPlatform2" parent="Platforms" unique_id=1500817935 instance=ExtResource("4_6cvei")]
+position = Vector2(2324, 541)
+
+[node name="FallingPlatform3" parent="Platforms" unique_id=1291805345 instance=ExtResource("4_6cvei")]
+position = Vector2(3551, 515)
+
+[node name="FallingPlatform4" parent="Platforms" unique_id=1027026107 instance=ExtResource("4_6cvei")]
+position = Vector2(4633, 218)
+
+[node name="FallingPlatform5" parent="Platforms" unique_id=2005593121 instance=ExtResource("4_6cvei")]
+position = Vector2(5904, 212)
+
+[node name="FallingPlatform6" parent="Platforms" unique_id=759286607 instance=ExtResource("4_6cvei")]
+position = Vector2(7131, 186)
+
+[node name="LevelBoundary" parent="." unique_id=1335190385 instance=ExtResource("5_que50")]
+position = Vector2(3, 1561)
+
+[node name="LevelDebug" type="CanvasLayer" parent="." unique_id=1114127567]
+
+[node name="LevelName" type="Label" parent="LevelDebug" unique_id=847033754]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Level 1"
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckpointFlag" parent="." unique_id=599909850 instance=ExtResource("6_hey2k")]
+position = Vector2(17366, -65)
+level_number = 2

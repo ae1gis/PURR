@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://lujg4pfw8kp4"]
+
+[ext_resource type="Script" uid="uid://bv7cv1jxifp1e" path="res://src/level_transition.gd" id="1_hp486"]
+[ext_resource type="Texture2D" uid="uid://bk06ru6o36wc8" path="res://assets/sprites/seamless-notebook-paper-texture-free.jpg" id="2_2ybma"]
+
+[node name="LevelTransition" type="Control" unique_id=2031871742]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hp486")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1044253197]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=393737951]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -68.5
+offset_right = 282.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Next level..."
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1978624567]
+position = Vector2(578, 294)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_2ybma")
+
+[node name="LevelIntermissionTimer" type="Timer" parent="." unique_id=981964607]
+wait_time = 2.0
+
+[connection signal="timeout" from="LevelIntermissionTimer" to="." method="_on_level_intermission_timer_timeout"]

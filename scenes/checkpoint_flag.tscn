@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bjk2n5kccljmo" path="res://src/checkpoint_flag.gd" id="1_4eoee"]
 [ext_resource type="Texture2D" uid="uid://deu4o5oae6g5j" path="res://assets/sprites/checkpoint-animation/frame0000.png" id="1_sj8yo"]
 [ext_resource type="Texture2D" uid="uid://ifprb5hagkv1" path="res://assets/sprites/checkpoint-animation/frame0001.png" id="2_4eoee"]
+[ext_resource type="Texture2D" uid="uid://bk06ru6o36wc8" path="res://assets/sprites/seamless-notebook-paper-texture-free.jpg" id="4_wtrfk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4r1u5"]
 size = Vector2(19.13023, 19.890007)
@@ -34,4 +35,32 @@ sprite_frames = SubResource("SpriteFrames_4yvre")
 autoplay = "default"
 frame_progress = 0.5909358
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=736335536]
+visible = false
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer" unique_id=1793899083]
+position = Vector2(578, 294)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_wtrfk")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1653030846]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Next level..."
+
+[node name="TimeUntilTransition" type="Timer" parent="CanvasLayer" unique_id=1987144669]
+wait_time = 2.5
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="CanvasLayer/TimeUntilTransition" to="." method="_on_time_until_transition_timeout"]

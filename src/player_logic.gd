@@ -44,7 +44,6 @@ func _physics_process(delta: float) -> void:
 			if not is_on_floor():
 				transition_to_state(States.FALL)
 		
-		# Too be implemented
 		States.RUN:
 			var direction := Input.get_axis("left", "right")
 			if direction != 0 and Input.is_action_pressed("shift"):
@@ -68,7 +67,7 @@ func _physics_process(delta: float) -> void:
 			if direction != 0 and Input.is_action_pressed("shift"):
 				velocity.x = direction * player_speed * 1.25
 			elif direction != 0:
-				velocity.x = direction * player_speed * 1.25
+				velocity.x = direction * player_speed
 			else:
 				velocity.x = 0
 				

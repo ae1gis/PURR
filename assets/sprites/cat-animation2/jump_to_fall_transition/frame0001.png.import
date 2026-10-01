@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvvt1genga3ax"
-path="res://.godot/imported/frame0001.png-1b43f51d381cb1192195030ecf66a07f.ctex"
+uid="uid://bmsfneasmf43i"
+path="res://.godot/imported/frame0001.png-9e92fa7e9ea883d82d0b64f876879423.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cat-animation2/jump/frame0001.png"
-dest_files=["res://.godot/imported/frame0001.png-1b43f51d381cb1192195030ecf66a07f.ctex"]
+source_file="res://assets/sprites/cat-animation2/jump_to_fall_transition/frame0001.png"
+dest_files=["res://.godot/imported/frame0001.png-9e92fa7e9ea883d82d0b64f876879423.ctex"]
 
 [params]
 
